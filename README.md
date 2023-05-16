@@ -1,5 +1,6 @@
 ```js
 const path = require('path')
+const injectPageLoader  = require("webpack-inject-page");
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -10,7 +11,7 @@ chainWebpack(config){
     .test(/\.vue$/)
     .pre()
     .use("injectPage")
-    .loader("./injectPage.js")
+    .loader(injectPageLoader)
     .options({
       componentName: "page",//组件名称
       include: resolve("src/**/*.vue"),//可为字符串，数组，正则
