@@ -8,6 +8,7 @@ chainWebpack(config){
         include: resolve('src/**/*.vue'),
         exclude: resolve('src/views/page.vue')
       }])
+
 }
 
 ```
