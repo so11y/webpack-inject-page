@@ -15,6 +15,7 @@ class InjectPagePlugin {
     compiler.options.module.rules.push({
       test: /\.vue$/,
       enforce: 'pre',
+      exclude:[/node_modules/],
       use: [
         {
           loader: path.resolve('./injectPage.js')
