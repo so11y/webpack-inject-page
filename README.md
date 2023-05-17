@@ -4,7 +4,7 @@ const InjectPagePlugin = require('webpack-inject-page')
 chainWebpack(config){
    config.plugin('InjectPagePlugin')
       .use(InjectPagePlugin, [{
-        componentName: 'page',
+        componentName: 'page',//修改为你的全局组件名称
         include: resolve('src/**/*.vue'),
         exclude: resolve('src/views/page.vue')
       }])
