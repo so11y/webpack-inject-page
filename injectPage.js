@@ -1,9 +1,6 @@
-const { createFilter } = require('@rollup/pluginutils')
 const templateRegex = /<template>([\s\S]*?)<\/template>/
-const loaderUtils = require('loader-utils')
 function injectPage(data) {
-  const options = loaderUtils.getOptions(this)
-  var filter = createFilter(options.include || '', options.exclude || '')
+  const { filter, options } = this.InjectPagePluginInstance
   if (filter(this.resourcePath)) {
     const matches = data.match(templateRegex)
     if (matches && matches.length >= 2) {

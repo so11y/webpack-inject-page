@@ -1,22 +1,13 @@
 ```js
-const path = require('path')
-function resolve(dir) {
-  return path.join(__dirname, dir)
-}
+const InjectPagePlugin = require('webpack-inject-page')
 //在vue.config.js中
 chainWebpack(config){
-  config.module
-    .rule("injectPage")
-    .test(/\.vue$/)
-    .pre()
-    .use("injectPage")
-    .loader("./injectPage.js")
-    .options({
-      componentName: "page",//组件名称
-      include: resolve("src/**/*.vue"),//可为字符串，数组，正则
-      exclude: resolve("src/views/page.vue"),//可为字符串，数组，正则
-    })
-    .end();
+   config.plugin('InjectPagePlugin')
+      .use(InjectPagePlugin, [{
+        componentName: 'page',
+        include: resolve('src/**/*.vue'),
+        exclude: resolve('src/views/page.vue')
+      }])
 }
 
 ```
@@ -44,4 +35,3 @@ export default{}
 export default{}
 </script>
 ```
-# webpack-inject-page

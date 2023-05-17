@@ -1,12 +1,9 @@
 {
   "name": "webpack-inject-page",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "编译阶段注入root组件",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "zrrz <https://github.com/so11y>",
+  "homepage": "https://github.com/so11y/webpack-inject-page",
   "license": "ISC",
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2"
